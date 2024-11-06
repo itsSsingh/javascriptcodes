@@ -1,1 +1,507 @@
+exp 1 Title: calculate area of triangle, area of rectangle and area of circle using Java Script.
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>The area of a triangle</title> 
+ 
+<h1> 
+Calculating Area using JavaScript 
+</h1> 
+ 
+<list> 
+<button onclick="area_triangle()" id = "btnl">traingle</button> 
+<button onclick="area_rectangle()" id = "btnl">rectangle</button> 
+<button onclick="area_circle()" id = "btnl">circle</button> 
+</list> 
+ 
+<script> 
+function area_triangle(){ 
+var side1 = parseInt(prompt("Enter side1 in cm")); 
+var side2 = parseInt(prompt("Enter side2 in cm")); 
+var side3 = parseInt(prompt("Enter side3 in cm")); 
+var s = (side1 + side2 + side3)/2; 
+var area = Math.sqrt(s*((s-side1)*(s-side2)*(s-side3))); 
+console.log("<br>" + "Area of triangle is = " + area.toFixed(2) + "sq.cm."); 
+document.write("<br>" + "Area of triangle is = " + area.toFixed(2) + "sq.cm."); 
+ 
+} 
+ 
+function area_rectangle(){ 
+var side1 = parseInt(prompt("Enter side1")); 
+var side2 = parseInt(prompt("Enter side2")); 
+var area = side1 * side2; 
+console.log("<br>" + "Area of triangle is = " + area.toFixed(2) + "sq.cm."); 
+document.write("<br>" + "Area of rectangle is = " + area.toFixed(2) + "sq.cm."); 
+ 
+} 
+ 
+function area_circle(){ 
+ 
+var radius = parseInt(prompt("Enter radius")); 
+var area = 3.14 * radius * radius; 
+console.log("<br>" + "Area of triangle is = " + area.toFixed(2) + "sq.cm."); 
+document.write("<br>" + "Area of circle is = " + area.toFixed(2) + "sq.cm."); 
+ 
+} 
+</script> 
+ 
+</head> 
+ 
+</html> 
+
+exp 2 Title: Generate the multiplication table of a given number.
+
+/* program to generate a multiplication table 
+upto a range */ 
+ 
+// take number input from the user 
+const number = parseInt(prompt('Enter a integer: ')); 
+ 
+ 
+// take range input from the user 
+const range = parseInt(prompt('Enter a range: ')); 
+ 
+//creating a multiplication table 
+for(let i = 1; i <= range; i++) { 
+const result = i * number; 
+console.log(`${number} * ${i} = ${result}`); 
+} 
+
+exp 3  title : JavaScript program to 
+i. Reverse string 
+ii. Replace characters of a string 
+iii. String is Palindrome
+
+
+<!DOCTYPE html> 
+<html> 
+<body> 
+ 
+<h2>String</h2> 
+ 
+<button onclick="RevStr()">Reverse a String</button> 
+<button onclick="ReplChr()">Replace Characters</button> 
+ 
+<p id = "test"></p> 
+<p id="demo"></p> 
+ 
+<script> 
+function ReplChr() { 
+document.getElementById("test").innerHTML = "Replace all occurrences of M with W in the paragraph : 
+My Music with Microsoft Apps"; 
+document.getElementById("demo").innerHTML = "My Music with Microsoft Apps"; 
+let text = document.getElementById("demo").innerHTML; 
+document.getElementById("demo").innerHTML = 
+text.replace(/M/g,"W"); 
+} 
+ 
+function RevStr(){ 
+ 
+// empty string 
+let revString = ""; 
+var str = prompt("Enter String");
+
+for (let i = str.length - 1; i >= 0; i--) { 
+revString += str[i]; 
+} 
+console.log("Given String = " + str + "<BR>" + "reversed String = " + revString); 
+PalStr(str, revString); 
+} 
+ 
+function PalStr(str, revString){ 
+ 
+// find the length of a string 
+var i = str.localeCompare(revString); 
+if (i == 0) { 
+console.log( 'It is a palindrome'); 
+} 
+else { 
+console.log( 'It is not a palindrome'); 
+} 
+} 
+</script> 
+ 
+</body> 
+</html>
+
+exp 4  title :  Compare two strings using various methods. 
+
+ 
+const string1 = 'JavaScript Program'; 
+const string2 = 'javascript '; 
+ 
+// compare both strings 
+const result = string1.toUpperCase() === string2.toUpperCase(); 
+ 
+if(result) { 
+console.log('The strings are similar.'); 
+} else { 
+console.log('The strings are not similar.'); 
+} 
+
+exp 5 title :  Create a Countdown Timer
+
+// program to create a countdown timer 
+ 
+// time to countdown from (in milliseconds) 
+let countDownDate = new Date().getTime() + 24 * 60 * 60 * 1000; 
+ 
+// countdown timer 
+let x = setInterval(function() { 
+ 
+// get today's date and time in milliseconds 
+let now = new Date().getTime(); 
+ 
+// find the interval between now and the countdown time 
+let timeLeft = countDownDate - now; 
+ 
+// time calculations for days, hours, minutes and seconds 
+const days = Math.floor( timeLeft/(1000*60*60*24) ); 
+const hours = Math.floor( (timeLeft/(1000*60*60)) % 24 ); 
+const minutes = Math.floor( (timeLeft/1000/60) % 60 ); 
+const seconds = Math.floor( (timeLeft/1000) % 60 ); 
+ 
+// display the result in the element with id="demo" 
+console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s "); 
+ 
+// clearing countdown when complete 
+if (timeLeft < 0) { 
+clearInterval(x); 
+console.log('CountDown Finished'); 
+} 
+}, 2000); 
+
+exp 6 Title: Create an Array
+
+ program to remove item from an array 
+ 
+function removeItemFromArray(array, n) { 
+const newArray = []; 
+ 
+for ( let i = 0; i < array.length; i++) { 
+if(array[i] !== n) { 
+newArray.push(array[i]); 
+} 
+} 
+return newArray; 
+} 
+const result = removeItemFromArray([1, 2, 3 , 4 , 5], 2); 
+ 
+console.log(result); 
+
+/ program to check if an array contains a specified value 
+const array = ['you', 'will', 'learn', 'javascript']; 
+const hasValue = array.includes('javascript'); 
+ 
+// check the condition 
+if(hasValue) { 
+console.log('Array contains a value.'); 
+} else { 
+console.log('Array does not contain a value.'); 
+} 
+
+ program to empty an array 
+ 
+function emptyArray(arr) { 
+/ substituting new array 
+arr = []; 
+ 
+return arr; 
+} 
+ 
+const array = [1, 2 ,3]; 
+console.log(array); 
+ 
+// call the function 
+const result = emptyArray(array); 
+console.log(result); 
+
+
+exp 7 : title :  illustrate Different Set Operations 
+
+// perform union operation 
+// contain elements of both sets 
+function union(a, b) { 
+let unionSet = new Set(a); 
+for (let i of b) { 
+unionSet.add(i); 
+} 
+return unionSet 
+} 
+// two sets of fruits 
+const setA = new Set(['apple', 'mango', 'orange']); 
+const setB = new Set(['grapes', 'apple', 'banana']); 
+const result = union(setA, setB); 
+console.log(result); 
+
+// perform intersection operation 
+// elements of set a that are also in set b 
+function intersection(setA, setB) { 
+let intersectionSet = new Set(); 
+ 
+for (let i of setB) { 
+if (setA.has(i)) { 
+intersectionSet.add(i); 
+} 
+} 
+return intersectionSet; 
+} 
+ 
+// two sets of fruits 
+const setA = new Set(['apple', 'mango', 'orange']); 
+const setB = new Set(['grapes', 'apple', 'banana']); 
+ 
+const result = intersection(setA, setB); 
+console.log(result);
+
+// perform difference operation 
+// elements of set a that are not in set b 
+function difference(setA, setB) { 
+let differenceSet = new Set(setA) 
+for (let i of setB) { 
+differenceSet.delete(i) 
+} 
+return differenceSet 
+} 
+ 
+// two sets of fruits 
+const setA = new Set(['apple', 'mango', 'orange']); 
+const setB = new Set(['grapes', 'apple', 'banana']); 
+ 
+const result = difference(setA, setB); 
+console.log(result); 
+
+// perform subset operation 
+// true if all elements of set b is in set a 
+function subset(setA, setB) { 
+for (let i of setB) { 
+if (!setA.has(i)) { 
+return false 
+} 
+} 
+return true 
+} 
+// two sets of fruits 
+const setA = new Set(['apple', 'mango', 'orange']); 
+const setB = new Set(['apple', 'orange']); 
+const result = subset(setA, setB); 
+console.log(result); 
+
+
+exp 8 Title: Create Home page of Any Website 
+ 
+Code for mouseover event: 
+ 
+<!DOCTYPE html> 
+<html> 
+<body> 
+<p>This example demonstrates how to assign an "onmouseover" and "onmouseout" 
+event to a h1 element.</p> 
+<h1 id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()">Mouse 
+over me</h1> 
+<script> 
+function mouseOver() { 
+document.getElementById("demo").style.color = "red"; 
+} 
+function mouseOut() { 
+document.getElementById("demo").style.color = "black"; 
+} 
+</script> 
+</body> 
+ 
+</html> 
+
+Code for On focus event: 
+ 
+<!DOCTYPE html> 
+<html> 
+<body> 
+Enter your name: <input type="text" onfocus="myFunction(this)">
+<p>When the input field gets focus, a function is triggered which changes the 
+background-color.</p> 
+<script> 
+function myFunction(x) { 
+x.style.background = "yellow"; 
+} 
+</script> 
+</body> 
+</html> 
+
+exp 9: title :  Implement a Simple Calculator . 
+
+HTML PART 
+ 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> A 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Calculator</title> 
+<link rel="stylesheet" href="style.css"> 
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link 
+href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swa 
+p" rel="stylesheet"> 
+</head> 
+<body> 
+<div class="container"> 
+<h1>Calculator</h1> 
+<div class="container2"> 
+<input type="text" placeholder="0" name="screen" id="screen"> 
+<table> 
+<tr> 
+<td><button id="clearall">C</button></td> 
+<td><button>(</button></td> 
+<td><button>)</button></td> 
+<td><button>Del</button></td> 
+</tr> 
+<tr> 
+<td><button>9</button></td> 
+<td><button>8</button></td> 
+<td><button>7</button></td> 
+<td><button>*</button></td> 
+</tr> 
+<tr> 
+<td><button>6</button></td> 
+<td><button>5</button></td> 
+<td><button>4</button></td> 
+<td><button>-</button></td> 
+</tr> 
+<tr> 
+<td><button>3</button></td> 
+<td><button>2</button></td> 
+<td><button>1</button></td> 
+<td><button>+</button></td> 
+</tr> 
+<tr> 
+<td><button>0</button></td> 
+<td><button>.</button></td> 
+<td><button>/</button></td> 
+<td><button id="equal">=</button></td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+</body> 
+<script src="script.js"></script> 
+</html> 
+
+JAVASCRIPT PART 
+
+let screen = document.getElementById('screen'); 
+buttons = document.querySelectorAll('button'); 
+let screenValue = ''; 
+for (item of buttons) { 
+item.addEventListener('click', (e) => { 
+buttonText = e.target.innerText; 
+console.log('Button text is ', buttonText); 
+if (buttonText == 'C') { 
+screenValue = ""; 
+screen.value = screenValue; 
+} 
+else if (buttonText == '=') { 
+screen.value = eval(screenValue); 
+} 
+else if(buttonText=='Del'){ 
+screen.value = screen.value.slice(0,-1); 
+screenValue = ""; 
+} 
+else { 
+screenValue += buttonText; 
+screen.value = screenValue; 
+} 
+}) 
+} 
+
+CSS PART 
+
+
+body{ 
+/* background-image: url(img/434906-abstract-pink-gradient.jpg); 
+background-repeat: no-repeat; */ 
+font-family: 'Playfair Display', serif; 
+} 
+.container{ 
+text-align: center; 
+padding-top: 5% ; 
+} 
+.container2{ 
+display: inline-block; 
+border: 2px ; 
+border-radius: 20px; 
+padding: 25px; 
+background-color: rgb(135, 175, 216); 
+} 
+h1{ 
+color: #ffffff; 
+} 
+table{ 
+margin: auto; 
+} 
+input{ 
+font-size: 30px; 
+background-color: #868585bb; 
+color: #221f1f; 
+height: 40px ; 
+padding-left: 5px; 
+padding-top: 10px; 
+padding-bottom: 10px; 
+border-radius: 10px; 
+margin-bottom: 5px; 
+} 
+button { 
+border-radius: 20px; 
+font-size: 26px; 
+color: #ffffff; 
+width: 92px; 
+height: 70px; 
+background: #3439d9; 
+background-image: -webkit-linear-gradient(top, #3439d9, #0570f2); 
+background-image: -moz-linear-gradient(top, #3439d9, #0570f2); 
+background-image: -ms-linear-gradient(top, #3439d9, #0570f2); 
+background-image: -o-linear-gradient(top, #3439d9, #0570f2); 
+background-image: linear-gradient(to bottom, #3439d9, #0570f2); 
+text-shadow: 1px 1px 3px #666666; 
+padding: 10px 20px 10px 20px; 
+text-decoration: none; 
+} 
+button:hover { 
+background: #3cb0fd; 
+background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db); 
+background-image: -moz-linear-gradient(top, #3cb0fd, #3498db); 
+background-image: -ms-linear-gradient(top, #3cb0fd, #3498db); 
+background-image: -o-linear-gradient(top, #3cb0fd, #3498db); 
+background-image: linear-gradient(to bottom, #3cb0fd, #3498db); 
+text-decoration: none; 
+} 
+#clearall{ 
+border-radius: 20px; 
+font-size: 26px; 
+color: #ffffff; 
+width: 92px; 
+height: 70px; 
+background: #ff0000; 
+background-image: -webkit-linear-gradient(top, #ff0202, #8d1414); 
+background-image: -moz-linear-gradient(top, #ff0202, #8d1414); 
+background-image: -ms-linear-gradient(top, #ff0202, #8d1414); 
+background-image: -o-linear-gradient(top, #ff0202, #8d1414); 
+background-image: linear-gradient(to bottom, #ff0202, #8d1414); 
+text-shadow: 1px 1px 3px #666666; 
+padding: 10px 20px 10px 20px; 
+text-decoration: none; 
+} 
+#clearall:hover { 
+background: #3cb0fd; 
+background-image: -webkit-linear-gradient(top, #ff3d02, #ad2a09); 
+background-image: -moz-linear-gradient(top, #ff3d02, #ad2a09); 
+background-image: -ms-linear-gradient(top, #ff3d02, #ad2a09); 
+background-image: -o-linear-gradient(top, #ff3d02, #ad2a09); 
+background-image: linear-gradient(to bottom, #ff3d02, #ad2a09); 
+text-decoration: none; 
+} 
+
+
 
