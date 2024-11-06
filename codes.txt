@@ -49,6 +49,7 @@ document.write("<br>" + "Area of circle is = " + area.toFixed(2) + "sq.cm.");
 </head> 
  
 </html> 
+************************************************************************************************************************************************************
 
 exp 2 Title: Generate the multiplication table of a given number.
 
@@ -67,6 +68,8 @@ for(let i = 1; i <= range; i++) {
 const result = i * number; 
 console.log(`${number} * ${i} = ${result}`); 
 } 
+
+************************************************************************************************************************************************************
 
 exp 3  title : JavaScript program to 
 i. Reverse string 
@@ -124,6 +127,7 @@ console.log( 'It is not a palindrome');
  
 </body> 
 </html>
+********************************************************************************************************************************************************
 
 exp 4  title :  Compare two strings using various methods. 
 
@@ -139,6 +143,7 @@ console.log('The strings are similar.');
 } else { 
 console.log('The strings are not similar.'); 
 } 
+**************************************************************************************************************************************************
 
 exp 5 title :  Create a Countdown Timer
 
@@ -171,6 +176,8 @@ clearInterval(x);
 console.log('CountDown Finished'); 
 } 
 }, 2000); 
+
+************************************************************************************************************************************************
 
 exp 6 Title: Create an Array
 
@@ -216,6 +223,8 @@ console.log(array);
 // call the function 
 const result = emptyArray(array); 
 console.log(result); 
+
+*************************************************************************************************************************************************************
 
 
 exp 7 : title :  illustrate Different Set Operations 
@@ -288,6 +297,8 @@ const setB = new Set(['apple', 'orange']);
 const result = subset(setA, setB); 
 console.log(result); 
 
+************************************************************************************************************************************************************
+
 
 exp 8 Title: Create Home page of Any Website 
  
@@ -327,6 +338,8 @@ x.style.background = "yellow";
 </script> 
 </body> 
 </html> 
+
+*********************************************************************************************************************************************************
 
 exp 9: title :  Implement a Simple Calculator . 
 
